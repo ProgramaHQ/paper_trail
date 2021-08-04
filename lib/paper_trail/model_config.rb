@@ -103,7 +103,7 @@ module PaperTrail
     def on_touch
       @model_class.after_touch { |r|
         r.paper_trail.record_update(
-          force: RAILS_LT_6_0,
+          force: true,
           in_after_callback: true,
           is_touch: true
         )
